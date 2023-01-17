@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Building') {
       steps {
+        bat 'pip install requirements.txt'
         bat 'docker build -t nom_image .'
       }
     }
@@ -13,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'docker run -d --name my-container -p  8080:5000 nom_image'
+        bat 'docker run -d nom_image'
       }
     }
   }
