@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'docker run -d  8080:5000 nom_image'
+        bat 'docker run -p  8080:5000 nom_image'
       }
     }
   }
