@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('Building') {
       steps {
-        bat 'pip install requirements.txt'
         bat 'docker build -t nom_image .'
       }
     }
